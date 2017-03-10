@@ -1,18 +1,12 @@
-# Simple Tools
+<?php
+// + ------------------------------------------------------------------
+// +                             DEMO
+// + ------------------------------------------------------------------
 
->  A repository for storing tools
-
-## Demo
-
-* [demo.php](./demo.php)
-
-## List & Usage
-
-###### 1. FViewCreator - A Simple Tool For Create Html/Xml Code  `FViewCreator/FViewCreator.php`
-
-   ```php
+// Usage: FViewCreator
+require './FViewCreator/FViewCreator.php';
 use HappyStraw\FViewCreator as FVC;
-$str = FVC::make('div')
+$str1 = FVC::make('div')
         ->setAttr('id', 'div1')
         ->setAttr(['style' => 'width:70px', 'class' => 'class1'])
         ->append('<h1>title</h1>')
@@ -38,7 +32,7 @@ $str = FVC::make('div')
                 FVC::make('input', 'readonly', 'inner is not valid')
             ]
         )->fetch();
-echo $str;
+echo $str1;
 // output(reindent):
 // <div id="div1" style="width:70px" class="class1">
 //   <h1>title</h1>
@@ -53,14 +47,3 @@ echo $str;
 //   <tag2/>
 //   <input readonly/>
 // </div>
-   ```
-
-## Dependencies
-
-* [php](http://php.net/) >= 5.4
-
-## Licence
-
-simple-tools is open source and released under the MIT Licence.
-
-Copyright (c) 2017 FangYutao
