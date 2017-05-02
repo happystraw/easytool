@@ -1,0 +1,20 @@
+{
+    "name": "happystraw/easytool",
+    "description": "tools",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "FangYutao",
+            "email": "fangyutao1993@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EasyTool\\": "src/easytool/"
+        }
+    }
+}

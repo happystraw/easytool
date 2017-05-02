@@ -3,33 +3,33 @@
 // +                             DEMO
 // + ------------------------------------------------------------------
 
-// Usage: FViewCreator
-require './src/easytool/EasyXml.php';
-use EasyTool\EasyXml as FVC;
-$str1 = FVC::make('div')
+// Usage: EasyXml
+require '../src/easytool/EasyXml.php';
+use EasyTool\EasyXml as Xml;
+$str1 = Xml::make('div')
         ->setAttr('id', 'div1')
         ->setAttr(['style' => 'width:70px', 'class' => 'class1'])
         ->append('<h1>title</h1>')
         ->append(
-            FVC::make('ul')
+            Xml::make('ul')
             ->setAttr(
                 'data-parentid="1"'
             )->append(
-                FVC::make('li')->append('menu1')
+                Xml::make('li')->append('menu1')
             )->append(
                 ['tag' => 'li', 'attr' => 'data-id="2"', 'inner' => 'menu2']
             )->append(
                 [
                     ['tag' => 'li', 'inner' => '<b>menu3</b>'],
-                    ['tag' => 'li', 'inner' => [FVC::make()->append('menu'), '4']],
-                    FVC::make('li')->append('menu5')
+                    ['tag' => 'li', 'inner' => [Xml::make()->append('menu'), '4']],
+                    Xml::make('li')->append('menu5')
                 ]
             )
         )->append(
             [
-                FVC::make('tag1', ['id' => 'tag1'], ['item in tag1']),
-                FVC::make('tag2', '', 'inner is not valid')->close(true),
-                FVC::make('input', 'readonly', 'inner is not valid')
+                Xml::make('tag1', ['id' => 'tag1'], ['item in tag1']),
+                Xml::make('tag2', '', 'inner is not valid')->close(true),
+                Xml::make('input', 'readonly', 'inner is not valid')
             ]
         )->fetch();
 echo $str1;
