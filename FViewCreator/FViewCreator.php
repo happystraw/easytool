@@ -5,7 +5,7 @@ namespace HappyStraw;
 /**
  * FViewCreator - A Simple Tool For Create Html/Xml Code
  *
- * @author HappyStraw <fangyutao1993@hotmail.com>
+ * @author FangYutao <fangyutao1993@hotmail.com>
  * @since 2017-02-04
  * @version 0.0.1
  */
@@ -135,7 +135,7 @@ class FViewCreator
             $this->ele[self::KEY_INNER] = array_merge($this->ele[self::KEY_INNER], $inners);
         }
         else {
-            $inners && $this->ele[self::KEY_INNER][] = $inners;
+            '' !== $inners && $this->ele[self::KEY_INNER][] = $inners;
         }
         return $this;
     }
@@ -230,12 +230,13 @@ class FViewCreator
 
     protected function parseInner($inner)
     {
+        if (is_numeric($inner)) return strval($inner);
         if (is_string($inner)) return $inner;
         if ($inner instanceof self) return $inner->fetch();
         $str = '';
         if (is_array($inner) && isset($inner[0])) {
             foreach ($inner as $item) {
-                if (is_string($item)) {
+                if (is_string($item) || is_numeric($item)) {
                     $str .= $item;
                 } else {
                     $str .= $this->parse($item);
