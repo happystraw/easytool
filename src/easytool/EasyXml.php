@@ -1,15 +1,15 @@
 <?php
 
-namespace HappyStraw;
+namespace EasyTool;
 
 /**
- * FViewCreator - A Simple Tool For Create Html/Xml Code
+ * EasyXml - A Easy Tool For Create Xml Code
  *
  * @author FangYutao <fangyutao1993@hotmail.com>
  * @since 2017-02-04
  * @version 0.0.1
  */
-class FViewCreator
+class EasyXml
 {
     private $ele;
     private $close;
@@ -18,10 +18,7 @@ class FViewCreator
     const KEY_ATTR = 'attr';
     const KEY_INNER = 'inner';
 
-    protected $selfCloseTags = [
-        'br', 'hr', 'area', 'base', 'img', 'input', 'link', 'meta',
-        'basefont', 'param', 'col', 'frame',
-    ];
+    protected $selfCloseTags = [];
 
     public function __construct()
     {
@@ -79,7 +76,7 @@ class FViewCreator
      * Set Attibutes
      *
      * @param mixed $name
-     * @param bool|null|string
+     * @param bool|null|string $value
      * @return self
      */
     public function setAttr($name, $value = false)
@@ -99,7 +96,7 @@ class FViewCreator
                 unset($this->ele[self::KEY_ATTR][$name]);
             }
             elseif (FALSE === $value) {
-                $name && $this->ele[self::KEY_ATTR][] = $name;
+                $name && array_push($this->ele[self::KEY_ATTR], $name);
             }
             else {
                 $this->ele[self::KEY_ATTR][$name] = $value;
@@ -135,7 +132,7 @@ class FViewCreator
             $this->ele[self::KEY_INNER] = array_merge($this->ele[self::KEY_INNER], $inners);
         }
         else {
-            '' !== $inners && $this->ele[self::KEY_INNER][] = $inners;
+            '' !== $inners && array_push($this->ele[self::KEY_INNER], $inners);
         }
         return $this;
     }
@@ -163,7 +160,7 @@ class FViewCreator
      */
     public function getInner()
     {
-        return $this->ele(self::KEY_INNER);
+        return $this->ele[self::KEY_INNER];
     }
 
     /**

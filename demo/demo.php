@@ -4,8 +4,8 @@
 // + ------------------------------------------------------------------
 
 // Usage: FViewCreator
-require './FViewCreator/FViewCreator.php';
-use HappyStraw\FViewCreator as FVC;
+require './src/easytool/EasyXml.php';
+use EasyTool\EasyXml as FVC;
 $str1 = FVC::make('div')
         ->setAttr('id', 'div1')
         ->setAttr(['style' => 'width:70px', 'class' => 'class1'])
