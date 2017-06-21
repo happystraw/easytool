@@ -6,7 +6,7 @@
 
 ###### 1. `EasyXml` - A Simple Tool For Create Html/Xml Code ,  
 
-* [Usage](./demo/EasyXml.php) 
+* [Usage](demo/EasyXml.md) 
 
 ## Dependencies
 
