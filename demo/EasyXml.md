@@ -1,10 +1,8 @@
-<?php
-// + ------------------------------------------------------------------
-// +                             DEMO
-// + ------------------------------------------------------------------
+# Easy Xml
 
-// Usage: EasyXml
-require '../src/easytool/EasyXml.php';
+* **Demo**
+
+```php
 use EasyTool\EasyXml as Xml;
 $str1 = Xml::make('div')
         ->setAttr('id', 'div1')
@@ -47,3 +45,5 @@ echo $str1;
 //   <tag2/>
 //   <input readonly/>
 // </div>
+```
+
