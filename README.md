@@ -14,6 +14,6 @@
 
 ## Licence
 
-simple-tools is open source and released under the MIT Licence.
+easytools is open source and released under the MIT Licence.
 
 Copyright (c) 2017 FangYutao
